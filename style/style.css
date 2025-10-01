@@ -3,8 +3,8 @@
 :root{
     /*color*/
         --background1: #B7E3CC;
-        --background2: #b7e3cc96;
-        --background3: #b7e3cc57;
+        --background2: #afd3c0d0;
+        --background3: #d8eee277;
         --color1: #2A6041;
         --color2: #C4FFB2;
         --color3: #D6F7A3;
@@ -58,7 +58,7 @@
             
             /*box*/
                 aspect-ratio: 1 / 1;
-                width: clamp(30px, 3%, 90px);
+                width: clamp(30px, 1%, 50px);
             
             /*style*/
                 border: 1px solid var(--background3);
@@ -74,9 +74,10 @@
         header > #menu > a > img{
             aspect-ratio: 1 / 1;
             width: 60%;
-            transition: transform .5s;
+            transition: transform .4s;
         }
-        header > #menu > a > img:hover{transform: scale(1.3);}
+        header > #menu > a > img:hover{transform: scale(1.2);}
+        header > #menu > a > img:active{transform: scale(.8);}
     /* /header */
     /* main */
         main{width: 100%;}
@@ -182,6 +183,7 @@
                             transition: transform .5s;
                     }
                     main > #sobremim > #perfil > #logos > a:hover{transform: scale(1.5);}
+                    main > #sobremim > #perfil > #logos > a:active{transform: scale(.8);}
                     main > #sobremim > #perfil > #logos > a > img{width: 100%;}
                 /* /logos */
             /* /perfil */
@@ -251,11 +253,13 @@
                             display: block;
 
                         /*box*/
+                            height: 5px;
                             margin: 30px 0 10px;
                             width: 100%;
                         
                         /*style*/
                             background-color: var(--color1);
+                            border-radius: 10px;
                     }
                     main > #finalizados > .container1 > .container2 > h3{
                         /*box*/
@@ -290,6 +294,10 @@
                         main > #finalizados > .container1 > .container2 > .linksites > a:hover{
                             background-image: linear-gradient(var(--color1), var(--color2));
                             transform: scale(1.1);
+                        }
+                        main > #finalizados > .container1 > .container2 > .linksites > a:active{
+                            background-image: linear-gradient(var(--color2), var(--color1));
+                            transform: scale(.9);
                         }
                     /* /botão */
                     main > #finalizados > .container1 > .container2 > p{margin: 10px 0 20px;}
@@ -327,11 +335,53 @@
 /* /mobileFirst */
 /* tablet */
     @media screen and (min-width: 760px) {
-        /* perfil */
- 
-            /* logos */
-               
-            /* /logos */
-        /* /perfil */
+        main{
+            margin: auto;
+            max-width: 700px;
+        }
+        main > #sobremim > #perfil{position: relative;}
+        main > #sobremim > #perfil > #logos{
+            position: absolute;
+            left: -1;
+            width: 100vw;
+        }
     }
 /* /tablet */
+/* desktop */
+    @media screen and (min-width: 1020px) {
+        
+        main{
+            display: grid;
+            grid-template: repeat(2, auto) / 35% 1fr;
+            max-width: unset;
+        }
+        main > #sobremim{
+            /*layout*/
+                grid-area: 1 / 1 / -1 / 2;
+                
+            /*box*/
+                height: 93vh;
+                left: 0;
+                margin: 0 auto;
+                padding: 15px;
+                position: sticky;
+                top: 4%;
+                width: 90%;
+            
+            /*style*/
+                background-color: var(--background3);
+                border-radius: 10px;
+                border: 5px solid var(--color1);
+        }
+        main > #sobremim > #perfil > #logos{
+            position: relative;
+            left: -1;
+            width: 105%;}
+        main > #finalizados{
+            font-size: 1.3em;
+            grid-area: 1 / 2 / 2 / -1;
+        }
+        main > #futuros{grid-area: 2 / 2 / -1 / -1;}
+        main > #futuros > ul{list-style: none;}
+    }
+/* /desktop */
