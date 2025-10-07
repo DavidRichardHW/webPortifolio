@@ -1,0 +1,50 @@
+/* tablet */
+    main{
+        margin: auto;
+        max-width: 700px;
+    }
+    main > #sobremim > #perfil{position: relative;}
+    main > #sobremim > #perfil > #logos{
+        position: absolute;
+        left: -1;
+        width: 100vw;
+    }
+/* /tablet */
+/* desktop */
+    @media screen and (min-width: 1020px) {
+        main{
+            display: grid;
+            grid-template: repeat(2, auto) / 35% 1fr;
+            max-width: unset;
+        }
+        main > #sobremim{
+            /*layout*/
+                grid-area: 1 / 1 / -1 / 2;
+                
+            /*box*/
+                height: 93vh;
+                left: 0;
+                margin: 0 auto;
+                padding: 15px;
+                position: sticky;
+                top: 4%;
+                width: 90%;
+            
+            /*style*/
+                background-color: var(--background3);
+                border-radius: 10px;
+                border: 5px solid var(--color1);
+        }
+        main > #sobremim > #perfil > #logos{
+            position: relative;
+            left: -1;
+            width: 105%;
+        }
+        main > #finalizados{
+            font-size: 1.3em;
+            grid-area: 1 / 2 / 2 / -1;
+        }
+        main > #futuros{grid-area: 2 / 2 / -1 / -1;}
+        main > #futuros > ul{list-style: none;}
+    }
+/* /desktop */
